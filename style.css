@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+
+}
+.container{
+    margin: 4em auto;
+    background-color: #1b1b1b;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    height: 30em;
+}
+.header{
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+.main-play-box{
+    height: 23em;
+    margin-left: 12em;
+    margin-right: 12em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr 1fr ;
+}
+.box{
+    text-align: center;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 2.2rem;
+}
+.score-board{
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.score-board button{
+    font-weight: 500;
+    padding: 4px;
+}
