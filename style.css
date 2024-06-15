@@ -48,7 +48,7 @@ body, html {
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
-    margin-top: 100px;
+    /* margin-top: 100px; */
 }
 
 .score-board button {
