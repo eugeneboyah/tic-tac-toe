@@ -1,45 +1,162 @@
-*{
+/* Reset and base styles */
+body, html {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-body{
-
-}
-.container{
-    margin: 4em auto;
-    background-color: #1b1b1b;
-    margin-left: 10rem;
-    margin-right: 10rem;
-    height: 30em;
-}
-.header{
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-}
-.main-play-box{
-    height: 23em;
-    margin-left: 12em;
-    margin-right: 12em;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr ;
-    grid-template-rows: 1fr 1fr 1fr ;
-}
-.box{
-    text-align: center;
-    border: 1px solid #fff;
-    color: #fff;
-    padding: 2.2rem;
-}
-.score-board{
-    color: #fff;
+    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-top: 1rem;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
 }
-.score-board button{
-    font-weight: 500;
-    padding: 4px;
+
+.container {
+    text-align: center;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Main game grid */
+.main-play-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.box {
+    width: 100%;
+    padding-top: 100%; /* This maintains the aspect ratio */
+    position: relative;
+    background-color: #e0e0e0;
+    border: 2px solid #ccc;
+    font-size: 5vw;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box.playerX {
+    background-color: #ffeb3b;
+}
+
+.box.playerO {
+    background-color: #8bc34a;
+}
+
+/* Scoreboard */
+.score-board {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.score-board button {
+    flex: 1;
+    padding: 10px;
+    margin: 0 5px;
+    cursor: default;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+/* Reset game button */
+#resetGameButton {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    background-color: #2196f3;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#resetGameButton:hover {
+    background-color: #1976d2;
+}
+
+/* Modal for game settings */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    text-align: left;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}
+
+.modal-content label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.modal-content select, .modal-content button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.modal-content button {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+}
+
+.modal-content button:hover {
+    background-color: #388e3c;
+}
+
+/* Responsive design */
+@media (min-width: 600px) {
+    .box {
+        font-size: 4vw;
+    }
+
+    .modal-content {
+        padding: 30px;
+    }
+}
+
+@media (min-width: 900px) {
+    .container {
+        width: 60%;
+        padding: 30px;
+    }
+
+    .box {
+        font-size: 3vw;
+    }
+
+    .modal-content {
+        padding: 40px;
+    }
 }

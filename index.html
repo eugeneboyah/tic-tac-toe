@@ -9,23 +9,54 @@
 <body>
     <div class="container">
         <h1 class="header">Tic-Tac-Toe</h1>
-        <Main class="main-play-box">
-            <h1 class="box-1 box"></h1>
-            <h1 class="box-2 box"></h1>
-            <h1 class="box-3 box"></h1>
-            <h1 class="box-4 box"></h1>
-            <h1 class="box-5 box"></h1>
-            <h1 class="box-6 box"></h1>
-            <h1 class="box-7 box"></h1>
-            <h1 class="box-8 box"></h1>
-            <h1 class="box-9 box"></h1>
-        </Main>
+        <main class="main-play-box">
+            <button class="box" data-index="0"></button>
+            <button class="box" data-index="1"></button>
+            <button class="box" data-index="2"></button>
+            <button class="box" data-index="3"></button>
+            <button class="box" data-index="4"></button>
+            <button class="box" data-index="5"></button>
+            <button class="box" data-index="6"></button>
+            <button class="box" data-index="7"></button>
+            <button class="box" data-index="8"></button>
+        </main>
         <div class="score-board">
-            <button id="computer_score">Computer</button>
-            <button id="draws_score">Draws</button>
-            <button id="player _score">Player</button>
+            <button id="computer_score">Computer: 0</button>
+            <button id="draws_score">Draws: 0</button>
+            <button id="player_score">Player: 0</button>
+        </div>
+        <button id="resetGameButton">Reset Game</button>
+    </div>
+
+    <!-- Modal for Game Settings -->
+    <div id="gameSettingsModal" class="modal">
+        <div class="modal-content">
+            <h2>Choose Your Settings</h2>
+            <div>
+                <label>Choose your symbol:</label>
+                <select id="playerSymbol">
+                    <option value="X">X</option>
+                    <option value="O">O</option>
+                </select>
+            </div>
+            <div>
+                <label>Choose game difficulty:</label>
+                <select id="gameDifficulty">
+                    <option value="easy">Easy</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+            <button id="startGameButton">Start Game</button>
         </div>
     </div>
- <script src="script.js"></script>
+
+    <!-- Audio Elements -->
+    <audio id="placeSymbolSound" src="/music/play.mp3"></audio>
+    <audio id="winSound" src="/music/win.mp3"></audio>
+    <audio id="loseSound" src="/music/lose.mp3"></audio>
+    <audio id="drawSound" src="/music/draw.mp3"></audio>
+    <audio id="backgroundMusic" src="/music/game-music.mp3" loop></audio>
+
+    <script src="script.js"></script>
 </body>
 </html>
